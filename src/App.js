@@ -1,13 +1,7 @@
 "use client";
 import { useState } from "react";
 import Button from "./components/Button";
-
-const products = [
-    { id: 1, img: "/assets/images/lg-a 3 (3).png", alt: "purple", color: "secondary_main", colorName: "purple", name: "Classy Modern Smart watch" },
-    { id: 3, img: "/assets/images/lg-a 3 (1).png", alt: "blue", color: "primary_main", colorName: "blue", name: "Classy Modern Smart watch" },
-    { id: 4, img: "/assets/images/lg-a 3 (2).png", alt: "cyan", color: "success_main", colorName: "cyan", name: "Classy Modern Smart watch" },
-    { id: 2, img: "/assets/images/lg-a 3.png", alt: "black", color: "black_light", colorName: "black", name: "Classy Modern Smart watch" },
-];
+import { products } from "./staticData";
 
 function App() {
     const [isOpen, setIsOpen] = useState(false);
@@ -69,8 +63,8 @@ function App() {
                         <p className=" text-lg font-semibold mb-3">Band Color</p>
                         <div className=" flex items-center gap-3">
                             {products.map((product) => (
-                                <div key={product.id} onClick={() => setIsProduct(product)} className={`${product.id === isProduct.id ? `border-${product.color}` : " border-transparent"} p-0.5  border-2 rounded-full cursor-pointer`}>
-                                    <div className={`h-4 w-4 rounded-full  bg-${product.color}`}></div>
+                                <div key={product.id} onClick={() => setIsProduct(product)} className={` p-0.5  border-2 rounded-full cursor-pointer`} style={{ borderColor: product.id === isProduct.id ? product.color : "transparent" }}>
+                                    <div className={`h-4 w-4 rounded-full `} style={{ backgroundColor: product.color }}></div>
                                 </div>
                             ))}
                         </div>
@@ -125,7 +119,7 @@ function App() {
             {isOpen && (
                 <>
                     <div className="fixed inset-0  bg-black bg-opacity-50 flex justify-center items-center z-40" onClick={handleCloseModal}>
-                        <div className="bg-white p-11 rounded-[1.25rem] shadow-lg w-[40.688rem] z-50">
+                        <div onClick={(e) => e.stopPropagation()} className="bg-white p-11 rounded-[1.25rem] shadow-lg w-[40.688rem] z-50">
                             <h2 className="text-2xl font-semibold mb-4">Your Cart</h2>
                             <table className=" bg-white rounded-lg min-w-full">
                                 <thead>
