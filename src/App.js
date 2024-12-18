@@ -70,8 +70,8 @@ function App() {
                         <p className="text-lg font-semibold mb-3">Band Color</p>
                         <div className="flex items-center gap-3">
                             {products.map((product) => (
-                                <div key={product.id} onClick={() => setIsProduct(product)} className={`p-0.5 border-2 rounded-full cursor-pointer ${product.id === isProduct.id ? `border-${product.color}` : "border-transparent"}`}>
-                                    <div className="h-4 w-4 rounded-full" style={{ backgroundColor: product.color }} />
+                                <div key={product.id} onClick={() => setIsProduct(product)} className={` border-2 rounded-full cursor-pointer`} style={{ borderColor: product.id === isProduct.id ? product.color : "transparent" }}>
+                                    <div className="h-4 w-4 rounded-full bg-cover m-0.5" style={{ backgroundColor: product.color }} />
                                 </div>
                             ))}
                         </div>
