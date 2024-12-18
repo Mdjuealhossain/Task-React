@@ -28,7 +28,7 @@ function App() {
     };
 
     const handleQuantityChange = (delta) => {
-        setCount((prev) => Math.max(1, prev + delta)); // Ensure count doesn't go below 1
+        setCount((prev) => Math.max(1, prev + delta));
     };
 
     return (
@@ -51,7 +51,7 @@ function App() {
                     </div>
                     <div className="flex items-center gap-1">
                         <h3 className="text-xl">$99.00</h3>
-                        <h2 className="text-2xl text-secondary_light">$79.00</h2>
+                        <h2 className="text-2xl text-secondary_light font-semibold">$79.00</h2>
                     </div>
                     <p className="text-lg text-secondary md:py-5 py-2">I must explain to you how all this mistaken idea of denoun cing ple praising pain was born and I will give you a complete account of the system, and expound the actual teaching.</p>
 
